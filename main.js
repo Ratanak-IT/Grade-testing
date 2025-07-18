@@ -6,10 +6,16 @@ document
     const name = document.getElementById("name").value.trim();
     const score = parseInt(document.getElementById("score").value.trim());
     const showgrade = document.getElementById("showgrade");
-    const clearbtn = document.getElementById("clearbtn"); // ប៊ូតុង Clear All
+    const clearbtn = document.getElementById("clearbtn");
 
     let grade = "";
     let message = "";
+    
+    if (score < 0 || score > 100 || isNaN(score)) {
+      showgrade.innerHTML = "❌ Please enter a score between 0 and 100.";
+      clearbtn.style.display = "block";
+      return;
+    }
 
     if (score >= 90) {
       grade = "A";
@@ -26,26 +32,19 @@ document
     } else if (score >= 50) {
       grade = "E";
       message = "You passed 🎉 the test";
-    } 
-      if (score < 0 || score > 100 || isNaN(score)) {
-        showgrade.innerHTML = "❌ Please enter a score between 0 and 100.";
-        clearbtn.style.display = "block";
-        return;
-      } else {
-        grade = "F";
-        message = "You failed 😢 the test, pls try again";
-      }
+    } else {
+      grade = "F";
+      message = "You failed 😢 the test, pls try again";
+    }
 
     showgrade.innerHTML = `Hello ${name}, your grade is <strong>${grade}</strong>. ${message}`;
-
-    // បង្ហាញប៊ូតុង Clear All
     clearbtn.style.display = "block";
   });
 
-// ✅ Function Clear All
+// ✅ Clear All button
 document.getElementById("clearbtn").addEventListener("click", function () {
   document.getElementById("name").value = "";
   document.getElementById("score").value = "";
   document.getElementById("showgrade").innerHTML = "";
-  this.style.display = "none"; // លាក់ប៊ូតុង Clear All វិញ
+  this.style.display = "none";
 });
