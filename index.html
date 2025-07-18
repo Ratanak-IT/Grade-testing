@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grade test</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <div class="container">
 
-        <h1>Grade Checker</h1>
+        <h1><i class="fa-solid fa-graduation-cap"></i> Grade Checker</h1>
         <div class="form-box">
         <form id="gradeform">
         <label for="name">Your name:</label>
@@ -17,8 +20,11 @@
         <label for="Score">Your Score:</label>
         <input type="number" id="score" name="score" placeholder="Enter your score..." required>
         <button type="submit">Check Grade</button>
+        <button id="clearbtn" style="display: none; background-color: #f44336; margin-top: 10px;">Clear All</button>
     </div>
     <div class="show-grade" id="showgrade">
+        <!-- Clear All button -->
+        
     </div>
 </div>
     

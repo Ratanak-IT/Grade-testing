@@ -43,6 +43,10 @@ input, button {
   border-radius: 6px;
   box-sizing: border-box;
 }
+input:focus{
+  border-color: #2f59e0;
+  outline: none;
+}
 
 button {
   margin-top: 15px;
@@ -62,4 +66,17 @@ button:hover {
   font-size: 16px;
   color: green;
   text-align: center;
+}
+#clearbtn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#clearbtn:hover {
+  background-color: #d32f2f;
 }
